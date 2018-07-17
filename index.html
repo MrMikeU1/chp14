@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,22 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.js"></script>
 
 <script>
-    
-$(document).ready(function(){
- $('form').validate();
- });
+function validateForm() {
+    var a = document.forms[0]
+if (a.userName.value == "" & document.forms[0].userEmail.value == "") {
+    alert("Fill in the Blanks");
+    return false;
+} // 
+if (a.userName.value == "") {
+    alert("Fill in your Name.");
+    return false;
+} // 
+if (a.userEmail.value == "") {
+    alert("Fill in your Email.");
+    return false;
+} // 
+return true;
+} 
     
 </script>
     
@@ -21,21 +34,21 @@ $(document).ready(function(){
 <body>
 
     
-<form method="post" id="form"
+<form method="post" id="forms"
       action="http://www.markmurtha.com/csis128/readform.asp"
       onsubmit="return validateForm();">
-<div>
+
     
 <label for="userName">Name:</label>
-<input type="text" name="userName" id="userName" class="required">
-</div> 
+<input type="text" name="userName" id="userName">
+
     
-<div> 
 <label for="userEmail">Email:</label>
-<input type="email" name="userEmail" id="userEmail"  class="required email">
-</div>
+<input type="text" name="userEmail" id="userEmail">
+
+
     
-<input type="submit" value="Sign Up Now." id="submit">
+<input type="submit" value="Sign Up Now.">
 
 </form>
     
